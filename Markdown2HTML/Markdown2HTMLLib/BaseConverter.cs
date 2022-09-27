@@ -38,7 +38,7 @@ namespace Markdown2HTMLLib
             }
 
             var ele = "p";
-            return $"<{ele}>{input}</{ele}>";
+            return $"<{ele}>{input.Trim()}</{ele}>";
         }
 
         /// <summary>

@@ -36,5 +36,13 @@ namespace Markdown2HTMLLib.Tests
             var output = converter.Convert(input);
             Assert.IsTrue(output == "This is a paragraph <a href=\"http://google.com\">with an inline link</a>. Neat, eh?");
         }
+
+        [TestMethod()]
+        public void ConvertTest4()
+        {
+            LinkConverter converter = new LinkConverter();
+            var output = converter.CanConvert("abc");
+            Assert.IsFalse(output);
+        }
     }
 }

@@ -8,6 +8,9 @@ namespace Markdown2HTMLLib
 {
     public class HeadingConverter : BaseConverter
     {
+        /// <summary>
+        /// Return False if the input string is not start with #
+        /// </summary>        
         public override bool CanConvert(string input)
         {
             if (input.StartsWith("#"))
@@ -17,6 +20,7 @@ namespace Markdown2HTMLLib
             return false;
         }
 
+        /// <inheritdoc />
         public override string Convert(string input)
         {
             if (!CanConvert(input))

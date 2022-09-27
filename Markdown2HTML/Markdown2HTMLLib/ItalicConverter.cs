@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Markdown2HTMLLib
 {
-    public class LinkConverter : BaseConverter
+    public class ItalicConverter: BaseConverter
     {
-        private string _pattern = @"\[(?<text>[^\]]+)\]\((?<url>[^\)]+)\)";
+        private string _pattern = @"\*(?<text>[^\*]+)\*";
 
         /// <inheritdoc />
         public override bool IsInlineConverter()
@@ -28,7 +28,7 @@ namespace Markdown2HTMLLib
         public override string Convert(string input)
         {
             Regex regex = new Regex(_pattern);
-            string output = regex.Replace(input, "<a href=\"${url}\">${text}</a>");
+            string output = regex.Replace(input, "<i>${text}</i>");
 
             return output;
 

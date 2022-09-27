@@ -13,6 +13,7 @@ namespace Markdown2HTMLLib
         {
             // build engine with list of converter in order of priorities
             converters.Add(new LinkConverter());
+            converters.Add(new ItalicConverter());
             converters.Add(new HeadingConverter());
             converters.Add(new BaseConverter());
         }
