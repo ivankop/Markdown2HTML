@@ -27,7 +27,7 @@ namespace Markdown2HTMLLib
                     input = converter.Convert(input);
                     if (!converter.IsInlineConverter())
                     {
-                        return input;
+                        break;
                     }
                 }
             }
